@@ -33,7 +33,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['nirmalancc-backend-1.onrender.com','localhost'],
+ALLOWED_HOSTS = ['nirmalancc-backend.onrender.com','localhost'],
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Application definition

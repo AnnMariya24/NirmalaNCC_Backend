@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: nirmalancc-backend-1
+    name: nirmalancc-backend
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "gunicorn core.wsgi:application" # CHANGE 'nirmala_project'
