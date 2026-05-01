@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments (Virtual Envs)
+.venv/
+venv/
+env/
+backendenv/
+bin/
+lib/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+
+# Secrets and Configurations
+.env
+*.env
+local_settings.py
+secrets.json
+
+# Database
+db.sqlite3
+db.sqlite3-journal
+
+# Media and Static
+media/
+# Optional: Only ignore static if you use 'collectstatic' to a specific folder
+# static/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+asgi.py
+wsgi.py
