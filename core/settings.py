@@ -86,13 +86,14 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 import dj_database_url
 import os
+db_from_env = dj_database_url.config(
+    default=str(os.environ.get('DATABASE_URL')),
+    conn_max_age=600,
+    ssl_require=True
+)
 
 DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get("DATABASE_URL"),
-        conn_max_age=600,
-        ssl_require=True
-    )
+    'default': db_from_env
 }
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
