@@ -39,5 +39,3 @@ Thumbs.db
 .vscode/
 .idea/
 
-asgi.py
-wsgi.py
