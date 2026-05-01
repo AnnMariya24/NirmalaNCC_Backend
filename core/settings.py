@@ -33,7 +33,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['nirmalancc-backend.onrender.com','localhost'],
+ALLOWED_HOSTS = ['nirmalancc-backend.onrender.com','localhost','127.0.0.1'],
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Application definition
@@ -84,12 +84,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 import dj_database_url
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-}
+import os
 
+DATABASES = {
+    'default': dj_database_url.parse(
+        os.environ.get("DATABASE_URL"),
+        conn_max_age=600,
+        ssl_require=True
+    )
+}
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
