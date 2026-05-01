@@ -1,6 +1,6 @@
 
 # 1. SETUP - Get your key from https://console.groq.com/
-# client = Groq(api_key="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")
+
 import os
 from groq import Groq # type: ignore
 from .models import NCCHandbook
