@@ -28,14 +28,14 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0%_76c!$d0wgo_v*0xgbcc#j)l_8#k7+btfkuu4fn2+nsvx@d4'
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME', '127.0.0.1')]
+ALLOWED_HOSTS = ['nirmalancc-backend.onrender.com','localhost'],
 
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Application definition
 
 INSTALLED_APPS = [
@@ -87,12 +87,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(
-        # Replace the string below with your actual local Postgres connection string
-        # Format: postgres://USER:PASSWORD@HOST:PORT/NAME
-        default='postgres://your_user:your_password@localhost:5432/your_db_name',
-        conn_max_age=600
-    )
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 # Password validation

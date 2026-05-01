@@ -5,15 +5,14 @@ services:
     buildCommand: "./build.sh"
     startCommand: "gunicorn core.wsgi:application" # CHANGE 'nirmala_project'
     envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: nirmala_ncc
-          property: connectionString
-          value: postgresql://nirmalanccdb_user:0HJX3ylNJqyTJSbahWQ8lA87t3ULMrJb@dpg-d7q8djv7f7vs73cou4f0-a/nirmalanccdb
+      - key: DATABASE_URL=postgresql://neondb_owner:npg_n1WmPw7tAXef@ep-red-waterfall-aoykkd9x-pooler.c-2.ap-southeast-1.aws.neon.tech/NIRMALANCCDB?sslmode=require&channel_binding=require
+        sync: false
       - key: SECRET_KEY
         generateValue: true
       - key: DEBUG
         value: "False"
+      - key: ALLOWED_HOSTS
+        value: "nirmalancc-backend.onrender.com"
 
 databases:
   - name: nirmala_ncc
