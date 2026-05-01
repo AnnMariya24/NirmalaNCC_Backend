@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: nirmalancc-backend
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn core.wsgi:application" # CHANGE 'nirmala_project'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          value: postgresql://nirmalanccdb_user:0HJX3ylNJqyTJSbahWQ8lA87t3ULMrJb@dpg-d7q8djv7f7vs73cou4f0-a/nirmalanccdb
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+
+databases:
+  - name: NIRMALANCCDB
+    plan: free
