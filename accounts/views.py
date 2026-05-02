@@ -1032,3 +1032,9 @@ class MyBillsListView(generics.ListAPIView):
         return UniformOrder.objects.filter(
             cadet=self.request.user
         ).prefetch_related('items__item').order_by('-created_at')
+
+
+from django.shortcuts import render
+
+def home_view(request):
+    return render(request, 'home.html')

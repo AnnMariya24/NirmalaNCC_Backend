@@ -23,5 +23,5 @@ Nirmala NCC
 """,
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[instance.email],
-            fail_silently=False,
+            fail_silently=True,
         )

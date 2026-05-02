@@ -6,6 +6,7 @@ from accounts import views
 from .officer_views import CadetListView
 
 urlpatterns = [
+    
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', LoginView.as_view(), name='login'),
     path('profile/cadet/', CadetProfileView.as_view()),
