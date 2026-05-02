@@ -154,7 +154,11 @@ SIMPLE_JWT = {
 }
 
 #email authentication
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# Change this line:
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# To this:
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
