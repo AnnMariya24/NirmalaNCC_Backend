@@ -33,7 +33,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['nirmalancc-backend.onrender.com','localhost','127.0.0.1'],
+ALLOWED_HOSTS = ['nirmalancc-backend.onrender.com','localhost','127.0.0.1']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Application definition
@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 import dj_database_url
 import os
 db_from_env = dj_database_url.config(
-    default=str(os.environ.get('DATABASE_URL')),
+    default=str(env('DATABASE_URL')),
     conn_max_age=600,
     ssl_require=True
 )
