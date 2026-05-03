@@ -169,11 +169,10 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 ADMIN_EMAIL = env('ADMIN_EMAIL')
 
 
-
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': env('CLOUDINARY_CLOUD_NAME',default=None),
-    'API_KEY': env('CLOUDINARY_API_KEY',default=None),
-    'API_SECRET': env('CLOUDINARY_API_SECRET',default=None)
+    'CLOUD_NAME': 'dzdwlue8v',
+    'API_KEY': '163751354926762',
+    'API_SECRET': 'KwgvOB-DZDvY4bxfcsWwgckLbQU'
 }
 STORAGES = {
     "default": {
